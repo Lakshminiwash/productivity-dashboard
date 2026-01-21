@@ -465,15 +465,18 @@ body {
   padding: 0.8rem;
   border-radius: 8px;
   margin-bottom: 0.6rem;
+  color: var(--black-color);
 }
 
 .dailyGoal .goal input {
   transform: scale(1.2);
+  color: var(--black-color);
 }
 
 .dailyGoal .goal span.done {
   text-decoration: line-through;
   opacity: 0.6;
+  color: var(--black-color);
 }
 
 /* ADD GOAL */
