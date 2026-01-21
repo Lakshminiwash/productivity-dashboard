@@ -1,0 +1,1143 @@
+@font-face {
+  font-family: aeonic-bold;
+  src: url(./fonnts.com-Aeonik-Bold.ttf);
+}
+@font-face {
+  font-family: aeonic-regular;
+  src: url(./fonnts.com-Aeonik-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+:root {
+  --pri-color: #1b3c53;
+  --sec-color: #234c6a;
+  --ter-color: #456882;
+  --ter2-color: #e3e3e3;
+  --black-color: black;
+  --green-color: green;
+  --red-color: red;
+}
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--pri-color);
+  font-family: aeonic-bold;
+  color: var(--ter2-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+.main .dashboard {
+  width: 100%;
+  height: 10%;
+  background-color: var(--ter-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  position: relative;
+  border-radius: 0.5rem;
+}
+.dashboard h1 {
+  font-size: 2.2rem;
+}
+.dashboard button {
+  font-size: 1.2rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--black-color);
+  cursor: pointer;
+}
+.main .weather {
+  width: 100%;
+  height: 45%;
+  background-image: url("https://images.unsplash.com/photo-1767562521358-dc8670bdd0c7?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5rem;
+  color: var(--ter2-color);
+  padding: 0 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.weather .day {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.weather .day h2 {
+  font-size: 1.8rem;
+}
+.weather .day h3 {
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
+}
+.weather .day h1 {
+  font-size: 3.5rem;
+}
+.weather .temp {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.weather .temp h1 {
+  font-size: 3.3rem;
+}
+.weather .temp h2 {
+  font-size: 1.5rem;
+  margin-top: -1rem;
+}
+.weather .temp h3 {
+  font-size: 1rem;
+}
+
+#allelem {
+  width: 100%;
+  height: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: top;
+}
+.todoElem,
+.dailyElem,
+.motiElem,
+.pomoElem,
+.goalsElem {
+  width: 19%;
+  height: 100%;
+  border-radius: 1rem;
+  background-color: var(--ter-color);
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}
+.todoElem h1,
+.dailyElem h1,
+.motiElem h1,
+.pomoElem h1,
+.goalsElem h1 {
+  position: absolute;
+  top: 5%;
+  right: 8%;
+}
+.todoElem img,
+.dailyElem img,
+.motiElem img,
+.pomoElem img,
+.goalsElem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem;
+}
+.fullelem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ter-color);
+}
+.fullelem .nav button {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0.2rem 1rem;
+  border-radius: 0.3rem;
+  border: 2px solid var(--black-color);
+  background-color: var(--ter2-color);
+  color: var(--black-color);
+  cursor: pointer;
+}
+.fullelem button:active {
+  scale: 0.98;
+}
+
+.fullelem .nav {
+  width: 100%;
+  height: 10%;
+  background-color: var(--pri-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+  padding: 1rem 2rem;
+}
+.todo .task {
+  width: 100%;
+  height: 90%;
+  background-color: var(--ter-color);
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.todo .task .writeTask {
+  width: 35%;
+}
+.todo .task .tasksToDo {
+  width: 60%;
+  height: 100%;
+  border-radius: 1rem;
+  padding: 1.7rem 1.5rem;
+  background-color: var(--sec-color);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow: auto;
+}
+.todo .task .writeTask form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--sec-color);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.todo .task .writeTask form input {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  color: var(--ter2-color);
+  background-color: var(--pri-color);
+}
+.todo .task .writeTask form textarea {
+  background-color: var(--pri-color);
+  width: 100%;
+  outline: none;
+  height: 40vh;
+  font-size: 1rem;
+  color: var(--ter2-color);
+  padding: 0.7rem 1rem;
+}
+.todo .task .writeTask .check {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.todo .task .writeTask .check input {
+  cursor: pointer;
+}
+.todo .task .writeTask .check label {
+  cursor: pointer;
+}
+.todo .task .writeTask form button {
+  font-size: 1.3rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  background-color: var(--pri-color);
+  color: var(--ter2-color);
+  border: none;
+}
+.todo .task .writeTask form button:active {
+  scale: 0.98;
+}
+.todo .task .tasksToDo .tasks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--ter2-color);
+  color: var(--black-color);
+  padding: 0.7rem 2rem;
+  border-radius: 3rem;
+}
+.todo .task .tasksToDo .tasks button {
+  font-size: 1rem;
+  padding: 0.7rem;
+  background-color: var(--green-color);
+  color: var(--ter2-color);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+.todo .task .tasksToDo .tasks h1 span {
+  font-size: 0.9rem;
+  background-color: var(--red-color);
+  color: var(--ter2-color);
+  padding: 0rem 0.4rem;
+  border-radius: 1rem;
+}
+.planner .nav h1 {
+  font-size: 2.4rem;
+}
+.planner .dailyPlan {
+  width: 100%;
+  height: 90%;
+  padding: 3rem;
+}
+.dailyPlan .plan {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  overflow: auto;
+}
+.dailyPlan .plan .input {
+  width: 48%;
+  height: 9vh;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.dailyPlan .plan .input h3 {
+  position: absolute;
+  font-size: 0.9rem;
+  top: 3%;
+  left: 3%;
+}
+.dailyPlan .plan .input input {
+  width: 100%;
+  height: 100%;
+  background-color: var(--pri-color);
+  border: none;
+  padding: 0 2.5rem;
+  font-size: 1.5rem;
+  color: var(--ter2);
+}
+/* .motivation{
+    display: block;
+} */
+.motivation .quoteSection {
+  width: 100%;
+  height: 90%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.motivation .quoteSection .quotes {
+  width: 70%;
+  height: 85%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
+  border-radius: 50rem;
+}
+
+/* Blur layer */
+.motivation .quoteSection .quotes::before {
+  content: "";
+  position: absolute;
+  background-color: var(--ter2-color);
+  inset: 0;
+  filter: blur(100px);
+  z-index: 1;
+}
+
+/* Content (no blur) */
+.motivation .quoteSection .quotes .quot {
+  width: 70%;
+  height: 70%;
+  border-radius: 1rem;
+  background-color: var(--green-color);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1.3rem 3rem;
+}
+.quoteSection .quotes .quot button {
+  width: fit-content;
+  font-size: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--ter-color);
+  border: none;
+  color: var(--ter2-color);
+}
+.quotes .quot .btn2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.quoteSection .quotes .quot p {
+  font-size: 1.7rem;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+/* .pomodoro{
+    display: block;
+} */
+.pomodoro button {
+  font-size: 2.5rem;
+  padding: 0.2rem 1rem;
+  border-radius: 0.3rem;
+  border: 2px solid var(--black-color);
+  cursor: pointer;
+  margin: 0 2rem;
+}
+.pomodoro .center h1 {
+  font-size: 7rem;
+  padding: 0 4rem;
+  color: var(--black-color);
+}
+.pomodoro .center {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+/* .goals {
+  display: block;
+} */
+.goals .dailyGoal {
+  width: 100%;
+  height: 90%;
+  background: linear-gradient(135deg, var(--ter-color), var(--green-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--ter2-color);
+}
+
+.dailyGoal .goals-box {
+  width: 90%;
+  max-width: 500px;
+  height: 90%;
+  background: var(--black-color);
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.dailyGoal .nav {
+  background-color: var(--ter-color);
+}
+.dailyGoal .nav h1 {
+  text-align: center;
+  width: 100%;
+}
+/* PROGRESS */
+.dailyGoal .progress {
+  margin: 1rem 0;
+  margin-top: 1.5rem;
+}
+
+.dailyGoal .bar {
+  width: 100%;
+  height: 10px;
+  background: var(--ter2-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dailyGoal .fill {
+  height: 100%;
+  width: 0%;
+  background: var(--green-color);
+  transition: 0.3s;
+}
+
+/* GOALS LIST */
+.dailyGoal .goal-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.dailyGoal .goal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ter2-color);
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+}
+
+.dailyGoal .goal input {
+  transform: scale(1.2);
+}
+
+.dailyGoal .goal span.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* ADD GOAL */
+.dailyGoal .add-goal {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.dailyGoal .add-goal input {
+  flex: 1;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.dailyGoal .add-goal button {
+  width: 45px;
+  border-radius: 50%;
+  border: none;
+  background: var(--green-color);
+  color: var(--black-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 320px) and (max-width: 375px) {
+  .main {
+    height: auto;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  .main .dashboard {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+  }
+  .dashboard h1 {
+    font-size: 1.5rem;
+  }
+  .main .weather {
+    border-radius: 0.5rem;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9rem;
+  }
+  .weather .day {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .weather .day h2 {
+    font-size: 1rem;
+  }
+  .weather .day h1 {
+    font-size: 1.8rem;
+  }
+  .weather .day h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+  .weather .temp {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .weather .temp h1 {
+    font-size: 3rem;
+  }
+  .weather .temp h2 {
+    font-size: 1.3rem;
+    margin-top: -1rem;
+  }
+  .weather .temp h3 {
+    font-size: 0.8rem;
+  }
+  #allelem {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .todoElem,
+  .dailyElem,
+  .motiElem,
+  .pomoElem,
+  .goalsElem {
+    width: 100%;
+    height: 100%;
+  }
+  .todoElem img,
+  .dailyElem img,
+  .motiElem img,
+  .pomoElem img,
+  .goalsElem img {
+    width: 100%;
+    height: auto;
+  }
+  .fullelem .nav {
+    width: 100%;
+    height: auto;
+    padding: 0.8rem 0.8rem;
+  }
+  .todo .task {
+    width: 100%;
+    height: auto;
+    background-color: var(--ter-color);
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .todo .task .writeTask {
+    width: 100%;
+  }
+  .todo .task .writeTask form {
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+  }
+  .fullelem {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: var(--ter-color);
+  }
+  .todo .task .tasksToDo .tasks {
+    padding: 0.5rem 0.5rem;
+    border-radius: 2rem;
+  }
+  .todo .task .tasksToDo .tasks button {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+  .todo .task .tasksToDo .tasks h1 span {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.2rem;
+    border-radius: 1rem;
+  }
+  .todo .task .tasksToDo .tasks h1 {
+    font-size: 1.5rem;
+  }
+  .todo .task .tasksToDo {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    padding: 1rem 0.7rem;
+    gap: 2rem;
+  }
+  .planner .dailyPlan {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+  .dailyPlan .plan {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .dailyPlan .plan .input {
+    width: 100%;
+  }
+  .dailyPlan .plan .input input {
+    padding: 0 1.5rem;
+  }
+  .motivation .quoteSection {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .motivation .quoteSection .quotes .quot {
+    width: 100%;
+    height: auto;
+    gap: 1rem;
+    /* justify-content: space-around; */
+    padding: 1rem 1rem;
+  }
+  .quoteSection .quotes .quot button {
+    width: fit-content;
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+  .quoteSection .quotes .quot p {
+    font-size: 1rem;
+    font-style: italic;
+    letter-spacing: 4px;
+  }
+  .pomodoro .center {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .pomodoro .center .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .pomodoro .center h1 {
+    font-size: 3.5rem;
+    padding: 0 4rem;
+  }
+  .pomodoro button {
+    font-size: 2rem;
+    padding: 0.2rem 1rem;
+  }
+  .goals .dailyGoal {
+    width: 100%;
+    height: 90vh;
+  }
+  .dailyGoal .nav {
+    padding: 0.3rem 1rem;
+  }
+  .dailyGoal .add-goal input {
+    flex: 1;
+    font-size: 1rem;
+  }
+  .dailyGoal .add-goal button {
+    width: 45px;
+    padding: 0.1rem 0.6rem;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 425px) {
+  .main {
+    height: auto;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  .main .dashboard {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+  }
+  .dashboard h1 {
+    font-size: 1.5rem;
+  }
+  .main .weather {
+    border-radius: 0.5rem;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12rem;
+  }
+  .weather .day {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .weather .day h2 {
+    font-size: 1rem;
+  }
+  .weather .day h1 {
+    font-size: 1.8rem;
+  }
+  .weather .day h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+  .weather .temp {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .weather .temp h1 {
+    font-size: 3rem;
+  }
+  .weather .temp h2 {
+    font-size: 1.3rem;
+    margin-top: -1rem;
+  }
+  .weather .temp h3 {
+    font-size: 0.8rem;
+  }
+  #allelem {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .todoElem,
+  .dailyElem,
+  .motiElem,
+  .pomoElem,
+  .goalsElem {
+    width: 100%;
+    height: 100%;
+  }
+  .todoElem img,
+  .dailyElem img,
+  .motiElem img,
+  .pomoElem img,
+  .goalsElem img {
+    width: 100%;
+    height: auto;
+  }
+  .fullelem .nav {
+    width: 100%;
+    height: auto;
+    padding: 0.8rem 0.8rem;
+  }
+  .todo .task {
+    width: 100%;
+    height: auto;
+    background-color: var(--ter-color);
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .todo .task .writeTask {
+    width: 100%;
+  }
+  .todo .task .writeTask form {
+    padding: 3rem 1rem;
+    border-radius: 1rem;
+  }
+  .fullelem {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: var(--ter-color);
+  }
+  .todo .task .tasksToDo .tasks {
+    padding: 0.5rem 0.5rem;
+    border-radius: 2rem;
+  }
+  .todo .task .tasksToDo .tasks button {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+  .todo .task .tasksToDo .tasks h1 span {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.2rem;
+    border-radius: 1rem;
+  }
+  .todo .task .tasksToDo .tasks h1 {
+    font-size: 1.5rem;
+  }
+  .todo .task .tasksToDo {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    padding: 1rem 0.7rem;
+    gap: 2rem;
+  }
+  .planner .dailyPlan {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+  .dailyPlan .plan {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .dailyPlan .plan .input {
+    width: 100%;
+  }
+  .dailyPlan .plan .input input {
+    padding: 0 1.5rem;
+  }
+  .motivation .quoteSection {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .motivation .quoteSection .quotes .quot {
+    width: 100%;
+    height: auto;
+    gap: 1rem;
+    /* justify-content: space-around; */
+    padding: 1rem 1rem;
+  }
+  .quoteSection .quotes .quot button {
+    width: fit-content;
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+  .quoteSection .quotes .quot p {
+    font-size: 1rem;
+    font-style: italic;
+    letter-spacing: 4px;
+  }
+  .pomodoro .center {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .pomodoro .center .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .pomodoro .center h1 {
+    font-size: 3.5rem;
+    padding: 0 4rem;
+  }
+  .pomodoro button {
+    font-size: 2rem;
+    padding: 0.2rem 1rem;
+  }
+  .goals .dailyGoal {
+    width: 100%;
+    height: 90vh;
+  }
+  .dailyGoal .nav {
+    padding: 0.3rem 1rem;
+  }
+  .dailyGoal .add-goal input {
+    flex: 1;
+    font-size: 1rem;
+    padding-right: 2rem;
+  }
+  .dailyGoal .add-goal button {
+    width: 45px;
+    padding: 0.3rem 0;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .main {
+    height: auto;
+    gap: 1.5rem;
+    padding: 2rem 3rem;
+  }
+  .main .dashboard {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+  }
+  .dashboard h1 {
+    font-size: 1.8rem;
+  }
+  .main .weather {
+    border-radius: 0.5rem;
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12rem;
+  }
+  .weather .day {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .weather .day h2 {
+    font-size: 1rem;
+  }
+  .weather .day h1 {
+    font-size: 1.8rem;
+  }
+  .weather .day h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+  .weather .temp {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .weather .temp h1 {
+    font-size: 3rem;
+  }
+  .weather .temp h2 {
+    font-size: 1.3rem;
+    margin-top: -1rem;
+  }
+  .weather .temp h3 {
+    font-size: 0.8rem;
+  }
+  #allelem {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .todoElem,
+  .dailyElem,
+  .motiElem,
+  .pomoElem,
+  .goalsElem {
+    width: 48%;
+    height: 100%;
+  }
+  .todoElem img,
+  .dailyElem img,
+  .motiElem img,
+  .pomoElem img,
+  .goalsElem img {
+    width: 100%;
+    height: auto;
+  }
+  .fullelem .nav {
+    width: 100%;
+    height: auto;
+    padding: 0.8rem 2.5rem;
+  }
+  .todo .task {
+    width: 100%;
+    height: auto;
+    background-color: var(--ter-color);
+    padding: 1rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .todo .task .writeTask {
+    width: 100%;
+  }
+  .todo .task .writeTask form {
+    padding: 2rem 2rem;
+    border-radius: 1rem;
+  }
+  .fullelem {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: var(--ter-color);
+  }
+  .todo .task .tasksToDo .tasks {
+    padding: 0.5rem 1.3rem;
+    border-radius: 2rem;
+  }
+  .todo .task .tasksToDo .tasks button {
+    font-size: 1rem;
+    padding: 0.8rem;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+  .todo .task .tasksToDo .tasks h1 span {
+    font-size: 1rem;
+    padding: 0.1rem 0.2rem;
+    border-radius: 1rem;
+  }
+  .todo .task .tasksToDo .tasks h1 {
+    font-size: 1.8rem;
+  }
+  .todo .task .tasksToDo {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    padding: 1rem 0.7rem;
+    gap: 2rem;
+  }
+  .planner .dailyPlan {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+  .dailyPlan .plan {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .dailyPlan .plan .input {
+    width: 100%;
+  }
+  .dailyPlan .plan .input input {
+    padding: 0 1.5rem;
+  }
+  .motivation .quoteSection {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .motivation .quoteSection .quotes .quot {
+    width: 100%;
+    height: auto;
+    gap: 1rem;
+    /* justify-content: space-around; */
+    padding: 1rem 1rem;
+  }
+  .quoteSection .quotes .quot button {
+    width: fit-content;
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+  .quoteSection .quotes .quot p {
+    font-size: 1rem;
+    font-style: italic;
+    letter-spacing: 4px;
+  }
+  .pomodoro .center {
+    width: 100%;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .pomodoro .center .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .pomodoro .center h1 {
+    font-size: 3.5rem;
+    padding: 0 4rem;
+  }
+  .pomodoro button {
+    font-size: 2rem;
+    padding: 0.2rem 1rem;
+  }
+  .goals .dailyGoal {
+    width: 100%;
+    height: 90vh;
+  }
+  .dailyGoal .nav {
+    padding: 0.3rem 1rem;
+  }
+  .dailyGoal .add-goal input {
+    flex: 1;
+    font-size: 1rem;
+    padding-right: 2rem;
+  }
+  .dailyGoal .add-goal button {
+    width: 45px;
+    padding: 0.3rem 0;
+    font-size: 1.5rem;
+  }
+}
